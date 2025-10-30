@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Summit 2026 - Sponsorship Opportunities</title>
+
+  <style>
+    body {
+      background-color: #f8fafc; /* soft gray-blue background */
+      margin: 0;
+      padding: 0;
+    }
+
+    .sp-logo {
+      width: 105px;
+      height: auto;
+      margin-bottom: 12px;
+	}
+    .sp-pack {
+      --sp-gap: 16px;
+      --sp-border: #e5e7eb;
+      --sp-muted: #6b7280;
+      --sp-bg: #fafafa;
+      --sp-accent: #111827;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      max-width: 1100px; margin: 24px auto; padding: 0 12px;
+    }
+    .sp-hero { position: relative; text-align: center; padding: 80px 12px 24px; background: var(--sp-bg); border: 1px solid var(--sp-border); border-radius: 14px; margin-bottom: 20px; }
+    .sp-hero h2 { margin: 0 0 6px; font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
+    .sp-hero p { margin: 0 0 12px; color: var(--sp-muted); }
+    .sp-btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--sp-border); text-decoration: none; }
+
+    .sp-grid {
+      display: grid;
+      gap: var(--sp-gap);
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+
+    @media (max-width: 800px) {
+      .sp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .sp-card { border: 1px solid var(--sp-border); border-radius: 12px; padding: 16px; background: #fff; display: flex; flex-direction: column; gap: 10px; line-height: 1.55; box-shadow: 0 1px 2px rgba(0,0,0,.05);}
+	.sp-card:not(:last-child) { margin-bottom: 4px; }
+    .sp-title { font-weight: 700; font-size: 1.05rem; margin: 0 0 0 4px; }
+	.sp-header-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+	.sp-header-bar {
+      position: absolute;
+      top: 16px;
+      left: 24px;
+    }
+
+    .sp-price { color: var(--sp-accent); font-weight: 700; font-size: 1.1rem;}
+    .sp-status {font-size: .75rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--sp-border); font-weight: 600; white-space: nowrap;}
+    .sp-status.available {   background: #e6ffed; color: #065f46; }
+    .sp-status.taken {   background: #ffe8e8;  color: #991b1b; }
+    .sp-benefits { margin: 0.25 rem; padding-left: 0.75 rem; padding-roght: 1 rem; list-style: disc; list-style-position: outside; }
+    .sp-benefits li { margin: 4px 0; max-width: 70ch;}
+    .sp-benefits li strong {
+        font-weight: 600;
+        color: #111827; /* or your text color */
+      }
+    .sp-cta {   display: flex;
+  justify-content: center; /* centers horizontally */
+  margin-top: 16px; }
+    .sp-cta a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: var(--sp-accent);  /* dark background */
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .sp-cta a:hover {
+      background-color: var(--sp-muted); /* slightly lighter on hover */
+    }
+
+    .sp-cta a:active {
+      transform: scale(0.97);
+    }
+    .sp-desc {
+      font-size: 0.9rem;
+      color: #4b5563; /* subtle gray */
+      margin: -4px 0 10px 0; /* closer to title */
+      line-height: 1.4;
+      font-style: italic;
+    }
+	.sp-footer { margin-top: 24px; color: var(--sp-muted); }
+  </style>
+</head>
+<body>
+  <section class="sp-pack">
+    <header class="sp-hero">
+      <div class="sp-header-bar">
+      	<a href="https://www.pghtech.org" target="_blank" class="sp-logo-link">
+	      <img src="https://www.pghtech.org/vendor/savvior/savvicms-ptc/img/ptc-logo-new-dk.png" alt="PTC logo" class="sp-logo">
+      	</a>
+      </div>
+      <h2>AI Summit 2026 - Sponsorship Opportunities</h2>
+      <p>Put your brand in front of our region’s tech leaders and innovators.</p>
+      
+      <a class="sp-btn" href="mailto:asteckel@pghtech.org">Contact Us About Sponsoring</a>
+    </header>
+
+    <div id="sp-grid" class="sp-grid" aria-live="polite">
+      <p>Loading sponsorship packages…</p>
+    </div>
+
+    <footer class="sp-footer">
+      <h3>About the Event</h3>
+      <p>
+        <strong>Dates:</strong> Feb 16–18 2026 &nbsp;|&nbsp;
+        <strong>Location:</strong> Pittsburgh, PA &nbsp;|&nbsp;
+        <strong>Attendees:</strong> ~500
+      </p>
+      <p>We curate practical sessions and meaningful connections for builders, founders, and technology leaders.</p>
+    </footer>
+  </section>
+
+  <script>
+    // Your sheet details
+    const SHEET_ID = "1F97w8RaNMX6n-P3Y1XXavYofRE85moAKdAkgZ5NOCnw";
+    const TAB_NAME = "Sheet1";
+
+    // Google Visualization JSON endpoint
+    const DATA_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(TAB_NAME)}`;
+
+    async function loadSheetObjects() {
+      const res = await fetch(DATA_URL, { cache: "no-store" });
+      const text = await res.text();
+      const match = text.match(/\{[\s\S]*\}/);
+      if (!match) throw new Error("Unexpected response format from Google Sheets.");
+      const gviz = JSON.parse(match[0]);
+
+      const cols = gviz.table.cols.map(c => (c.label || c.id || "").trim());
+      const rows = gviz.table.rows || [];
+
+      return rows.map(r => {
+        const cells = (r.c || []).map(c => (c && (c.v !== null && c.v !== undefined)) ? c.v : "");
+        return Object.fromEntries(cols.map((h, i) => [h, cells[i] ?? ""]));
+      });
+    }
+
+
+    function mapToPackages(rows) {
+      return rows.map(r => ({
+        tier: r.Tier || "",
+        name: r.Name || r.Tier || "",
+        price: r.Price || "",
+        status: r.Status || "Available",
+		description: r.Description || "",
+        benefits: typeof r.Benefits === "string" ? r.Benefits.split(/[|;]\s*/).filter(Boolean) : [],
+        contactLabel: r.ContactLabel || "Contact Us",
+        contactHref: r.ContactHref || "#contact",
+        sort: Number(r.Sort || 9999)
+      }));
+    }
+
+    // Format numeric price as USD
+    const fmtUSD = n =>
+      isNaN(+n) ? n : (+n).toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+      });
+
+    function render(items) {
+      const grid = document.getElementById("sp-grid");
+      grid.innerHTML = "";
+      items
+        .sort((a,b)=> (a.sort??9999)-(b.sort??9999))
+        .forEach(it=>{
+          const taken=/taken|sold\s*out|closed/i.test(it.status||"");
+          const statusClass=taken?"taken":"available";
+          const benefits = (it.benefits || []).map(txt => {
+              // Look for a colon in the text
+              const m = txt.match(/^([^:]+):\s*(.*)$/);
+              // If found, bold the first part before the colon
+              return m ? `<li><strong>${m[1]}:</strong> ${m[2]}</li>` : `<li>${txt}</li>`;
+            }).join("");
+          
+          grid.insertAdjacentHTML("beforeend", `
+  <article class="sp-card ${statusClass}">
+    <div class="sp-header-row">
+      <span class="sp-status ${statusClass}">${it.status}</span>
+      <h3 class="sp-title">${it.name}</h3>
+    </div>
+    ${it.description ? `<p class="sp-desc">${it.description}</p>` : ""}
+    <div><span class="sp-price">${fmtUSD(it.price)}</span></div>
+    ${benefits ? `<ul class="sp-benefits">${benefits}</ul>` : ""}
+    <div class="sp-cta">
+      ${taken ? "" : `<a href="${it.contactHref}">${it.contactLabel}</a>`}
+    </div>
+  </article>
+`);
+        });
+    }
+
+    loadSheetObjects()
+      .then(mapToPackages)
+      .then(render)
+      .catch(err=>{
+        console.error(err);
+        document.getElementById("sp-grid").innerHTML="<p>Couldn’t load sponsorship packages right now. Please Email: asteckel@pghtech.org</p>";
+      });
+  </script>
+</body>
+</html>
