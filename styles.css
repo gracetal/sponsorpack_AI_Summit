@@ -17,10 +17,11 @@ body {
 }
 
 .sp-blurb {
-  max-width: 400px;
-  margin: 0 auto 16px;
+  max-width: 400px;        /* controls readable line length */
+  margin: 0 auto 16px;     /* centers the block itself */
   color: var(--sp-muted);
   line-height: 1.5;
+  text-align: center;      /* centers the text inside */
 }
 
 .sp-blurb .sp-link {
