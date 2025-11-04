@@ -1,0 +1,21 @@
+/* Basic global styling */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fc;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Header section */
+header {
+  background-color: #004080; /* Deep blue */
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size
