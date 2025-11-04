@@ -17,23 +17,24 @@ body {
 }
 
 .sp-blurb {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;             /* ensure it's treated as a block element */
+  max-width: 600px;           /* readable width */
+  margin-left: auto;          /* center the block */
+  margin-right: auto;         /* center the block */
   margin-bottom: 16px;
+  text-align: center;         /* center the text inside */
   color: var(--sp-muted);
-  line-height: 1.5;
-  text-align: center;
-  display: block;
+  line-height: 1.6;
 }
 
-.sp-blurb .sp-link {
+
+.sp-link {
   color: var(--sp-accent);
   font-weight: 600;
   text-decoration: none;
 }
 
-.sp-blurb .sp-link:hover {
+.sp-link:hover {
   text-decoration: underline;
 }
 
@@ -65,6 +66,7 @@ body {
 .sp-hero {
   position: relative;
   text-align: center;
+  display: block;           /* avoids flex/grid side effects */
   padding: 80px 12px 24px;
   background: var(--sp-bg);
   border: 1px solid var(--sp-border);
