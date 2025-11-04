@@ -27,7 +27,9 @@ body {
   line-height: 1.6;
 }
 
-
+.sp-date{
+  font-weight: 700; font-size: 1.05rem;
+}
 .sp-link {
   color: var(--sp-accent);
   font-weight: 600;
