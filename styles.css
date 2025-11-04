@@ -16,13 +16,15 @@ body {
   text-align: center;
 }
 
+.sp-hero p {
+  margin: 0 auto 12px;     /* centers all <p> blocks */
+  color: var(--sp-muted);
+  max-width: 600px;        /* matches .sp-blurb width */
+  text-align: center;
+}
+
 .sp-blurb {
-  display: block;             /* ensure it's treated as a block element */
-  max-width: 600px;           /* readable width */
-  margin-left: auto;          /* center the block */
-  margin-right: auto;         /* center the block */
   margin-bottom: 16px;
-  text-align: center;         /* center the text inside */
   color: var(--sp-muted);
   line-height: 1.6;
 }
