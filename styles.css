@@ -69,14 +69,20 @@ body {
 
 .sp-hero {
   position: relative;
-  text-align: center;
-  display: block;           /* avoids flex/grid side effects */
-  padding: 80px 12px 24px;
   background: var(--sp-bg);
   border: 1px solid var(--sp-border);
   border-radius: 14px;
   margin-bottom: 20px;
+
+  /* the magic alignment bits */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 80px 12px 24px;
 }
+
 
 .sp-hero h2 { margin: 0 0 6px; font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
 .sp-hero p { margin: 0 0 12px; color: var(--sp-muted); }
