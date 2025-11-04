@@ -17,9 +17,12 @@ body {
 }
 
 .sp-event-logo {
-  max-width: 180px;
+  max-width: 140px;     /* smaller cap; adjust to taste */
+  width: 100%;          /* scales responsively inside its container */
   height: auto;
+  object-fit: contain;  /* keeps proportions even if resized */
 }
+
 
 .sp-header-logo img {
   display: inline-block;
