@@ -17,7 +17,7 @@ body {
 }
 
 .sp-event-logo {
-  max-width: 200px;     /* smaller cap; adjust to taste */
+  max-width: 250px;     /* smaller cap; adjust to taste */
   width: 100%;          /* scales responsively inside its container */
   height: auto;
   object-fit: contain;  /* keeps proportions even if resized */
